@@ -1,0 +1,12 @@
+def get_integral(func, a, b):
+    """Compute the area under `func` between x=a and x=b."""
+    h = 0.0001               # width of small rectangle
+    x = a                    # start at x=a
+    total = 0
+    while x <= b:            # continue until x=b
+        total += h*func(x)   # area of rect is base*height
+        x += h
+    return total
+
+def f(x): return x**2                    # some test function f(x)=x^2
+computed = get_integral(f, 1, 3)
